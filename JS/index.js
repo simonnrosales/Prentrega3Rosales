@@ -20,9 +20,6 @@ function ModificarHamburgesa() {
   ); 
 }
 
-
-
-
 const hamburgesas = [
   {
   id: 1,
@@ -54,10 +51,6 @@ const hamburgesas = [
   },
 ];
 
-const hamburgesaDetalles=({nombre, precio, patys, Ingredientes})=>{
-  hamburgesas.push({nombre, precio, patys, Ingredientes})
-}
-
 const informacion = () => {
   let mensajeInformativo = "";
   for (let hamburgesa of hamburgesas) {
@@ -72,10 +65,6 @@ mensajeInformativo+=
 console.log (mensajeInformativo);
 alert (mensajeInformativo);
 }
-
-
-
-
   
 function comprarHamburgesa() {
   let total = 0;
@@ -151,21 +140,7 @@ switch (eleccion){
  return item; 
 }
   
- /*  switch (expresión) {
-  case valor1:
-    //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
-    [break;]
-  case valor2:
-    //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-    [break;]
-  ...
-  case valorN:
-    //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
-    [break;]
-  default:
-    //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
-    [break;] */
-
+ 
 
 
 
