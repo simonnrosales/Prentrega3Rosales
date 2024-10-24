@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background-color: black;
+  }
+  
+  header img {
+    width: 100px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1, 25rem;
+    list-style: noney;
+  }
+  
+  .nav li a {
+    text-decoration: none;
+    color: red;
+  }
+  
+  h2 {
+    text-decoration: none;
+    color: red;
+  }
+  
+  dl dt {
+    margin-left: 2.5rem;
+    text-decoration: none;
+    color: red;
+  }
+  
+  dl dd {
+    margin-left: 2.5rem;
+    text-decoration: none;
+    color: red;
+  }
+  
+  .Hamburgesas {
+    width: 500px;
+    height: 250px;
+  }
