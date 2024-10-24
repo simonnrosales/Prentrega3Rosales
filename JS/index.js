@@ -1,6 +1,6 @@
 function mostrarHamburgesa() {
   return prompt(
-    "Catalogo de productos (a partir de la segunda compra se aplica un descuento de 200$): \n" +
+    "(a partir de la segunda compra se aplica un descuento de 200$): \n" +
     "1. Hamburgesa Tiny Jobs $6500: \n" +
     "2. Hamburgesa Big Jobs $9000: \n" +
     "3. Hamburgesa Jobster $10000: \n" +
@@ -9,44 +9,74 @@ function mostrarHamburgesa() {
   ); 
 }
 
+function ModificarHamburgesa() {
+  return prompt(
+    "(a partir de la segunda compra se aplica un descuento de 200$): \n" +
+    "1. Hamburgesa Tiny Jobs $6500: \n" +
+    "2. Hamburgesa Big Jobs $9000: \n" +
+    "3. Hamburgesa Jobster $10000: \n" +
+    "4. Hamburgesa Mega Jobster $13000: \n" +
+    "Que Hamburgesa queres Modificar? ingrese el numero o escriba 'salir' para finalizar"
+  ); 
+}
 
 
-const Hamburgesas = [
+
+
+const hamburgesas = [
   {
   id: 1,
   nombre: "TinyJobs",
   precio:  6500,
   patys: 1,
-  Ingredientes: ["cheddar"]
+  Ingredientes: [" cheddar"]
   },
   {
   id: 2,
   nombre: "BigJobs",
   precio:  9000,
   patys: 2,
-  Ingredientes: ["muzzarella", "lechuga", "tomate", "salsa jobs" ]
+  Ingredientes: [" muzzarella", "lechuga", " tomate", " salsa jobs" ]
   },
   {
   id: 3,
   nombre: "Jobster",
   precio:  10000,
   patys: 2,
-  Ingredientes: ["cheddar", "huevo", "panceta", "pepino", "barbacoa"]
+  Ingredientes: [" cheddar", " huevo", " panceta", " pepino", " barbacoa"]
   },
   {
   id: 4,
   nombre: "MegaJobster",
   precio:  13000,
   patys: 3,
-  Ingredientes: ["cheddar", "huevo", "panceta", "pepino", "barbacoa"]
+  Ingredientes: [" cheddar", " huevo", " panceta", " pepino", " barbacoa"]
   },
 ];
 
-const solicitarIngredientes=()=>{}
+const hamburgesaDetalles=({nombre, precio, patys, Ingredientes})=>{
+  hamburgesas.push({nombre, precio, patys, Ingredientes})
+}
 
-const eliminarIngrediente=()=>{}
+const informacion = () => {
+  let mensajeInformativo = "";
+  for (let hamburgesa of hamburgesas) {
+mensajeInformativo+=
+  `
+  nombre:${hamburgesa.nombre} 
+  precio: ${hamburgesa.precio}  
+  patys: ${hamburgesa.patys} 
+  Ingredientes: ${hamburgesa.Ingredientes} 
+`;
+  }
+console.log (mensajeInformativo);
+alert (mensajeInformativo);
+}
 
 
+
+
+  
 function comprarHamburgesa() {
   let total = 0;
   let cantidad = 0;
@@ -102,18 +132,25 @@ function elegirHamburgesa() {
     return elegirHamburgesa();
   }
 
-  let item = 0;
-  if (eleccion === 1) {
-    item = 6500;
-  } else if (eleccion === 2) {
-    item = 9000;
-  } else if (eleccion === 3) {
-    item = 10000;
-  } else if (eleccion === 4) {
-    item = 13000;
-  }
-  return item;
 
+  let item = 0;
+switch (eleccion){  
+  case 1:
+    item = 6500;
+    break;
+  case 2:
+    item = 9000;
+    break;
+  case 3:
+    item = 10000;
+    break;
+  case 4:
+    item = 13000;
+    break;
+  }
+ return item; 
+}
+  
  /*  switch (expresión) {
   case valor1:
     //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor1
@@ -128,7 +165,7 @@ function elegirHamburgesa() {
   default:
     //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
     [break;] */
-}
+
 
 
 
