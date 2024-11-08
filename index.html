@@ -3,18 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <title>Jobs</title>
   </head>
   <body>
     <script src="./JS/index.js"></script>
     <header>
       <img src="./assets/img/jobs.jpeg" alt="" />
       <nav>
-        <button type="button" value="click" onclick="informacion()">Ver Hamburgesas</button>
-        <button type="button" value="click" onclick="comprarHamburgesa()">Comprar Hamburgesas</button>
-        <button type="button" value="click" onclick="ModificarHamburgesa()">Comprar Hamburgesas pero cambiarle algo</button>
+        
       </nav>
     </header>
+
+    <!-- Contenedor principal de los productos -->
+    <div class="products" id="productList"></div>
+
+    <!-- Boton para abrir el sidebar -->
+    <div>
+      <button class="cart__openButton">Abrir Carrito</button>
+    </div>
+
+    <div id="cartSidebar" class="cart__sidebar">
+      <button class="cart__close">X</button>
+
+      <div class="cart__container">
+        <h2>Tu carrito</h2>
+        <div class="cart__items"></div>
+      </div>
+
+      <div class="cart__totalPrice">Total: $0</div>
+    </div>
+
+    <div id="producto1"></div>
+    <div id="producto2"></div>
+
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/cart.js"></script>
+    <script type="module" src="./js/ui.js"></script>
   </body>
 </html>

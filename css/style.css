@@ -1,54 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: black;
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1.25rem;
-    background-color: black;
-  }
-  
-  header img {
-    width: 100px;
-  }
-  
-  .nav {
-    display: flex;
-    gap: 1, 25rem;
-    list-style: noney;
-  }
-  
-  .nav li a {
-    text-decoration: none;
-    color: red;
-  }
-  
-  h2 {
-    text-decoration: none;
-    color: red;
-  }
-  
-  dl dt {
-    margin-left: 2.5rem;
-    text-decoration: none;
-    color: red;
-  }
-  
-  dl dd {
-    margin-left: 2.5rem;
-    text-decoration: none;
-    color: red;
-  }
-  
-  .Hamburgesas {
-    width: 500px;
-    height: 250px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background-color: black;
+}
+
+header img {
+  width: 100px;
+}
+
+.nav {
+  display: flex;
+  gap: 1, 25rem;
+  list-style: noney;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: red;
+}
+
+h2 {
+  text-decoration: none;
+  color: red;
+}
+
+dl dt {
+  margin-left: 2.5rem;
+  text-decoration: none;
+  color: red;
+}
+
+dl dd {
+  margin-left: 2.5rem;
+  text-decoration: none;
+  color: red;
+}
+
+/*=============================================
+=                   Products                   =
+=============================================*/
+
+.products {
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: 1fr;
+  margin: 0 auto;
+  margin-top: 100px;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.product {
+  display: flex;
+  width: 200px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+}
+
+.product__title {
+  color: rgb(75, 75, 75);
+}
+
+.product__price {
+  text-align: center;
+  padding: 10px;
+  font-weight: 600;
+}
+.product__image {
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+.product__add {
+  width: 140px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+}
+.product__add:hover {
+  background-color: dimgrey;
+  color: aliceblue;
+}
+/*=============================================
+=                   Cart                   =
+=============================================*/
+
+/* Estilos del carrito lateral (sidebar) */
+.cart__sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Oculto fuera de la vista */
+  width: 300px;
+  height: 100%;
+  background-color: #f4f4f4;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.cart__sidebar--open {
+  right: 0; /* Se muestra cuando se añade la clase --open */
+}
+
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart__title {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cart__close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  z-index: 1002; /* Asegúrate de que esté sobre otros elementos */
+}
+
+.cart__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.cart__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart__item {
+  width: 270px;
+  border: solid 1px gainsboro;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 20px;
+}
+.cart__item-title {
+  font-size: bold;
+  color: rgb(82, 82, 82);
+}
+
+.cart__itemPrice {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cart__span {
+  font-weight: bold;
+}
+
+.cart__handleQuantity {
+  width: 80px;
+  height: 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: rgb(158, 158, 158);
+  color: white;
+}
+
+.cart__delete {
+  width: 60px;
+  height: 30px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+}
+
+.cart__totalPrice {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.cart__checkout {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.cart__checkout:hover {
+  background-color: #3b3b3b;
+  color: white;
+}
+
+/* Estilo del botón para abrir el carrito */
+
+.cart__wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart__openButton {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.cart__openButton:hover {
+  background-color: #555;
+}
+
+.cart__item-count {
+  position: absolute; /* Posiciona el contador de manera absoluta dentro del contenedor */
+  top: 10px; /* Ajusta según sea necesario */
+  right: 10px; /* Ajusta según sea necesario */
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+}
+
+.cart__increase,
+.cart__decrease,
+.cart__remove {
+  background-color: #c0c0c0;
+  padding: 5px;
+  border: 1px solid gainsboro;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart__increase:hover,
+.cart__decrease:hover,
+.cart__remove:hover {
+  background-color: #555;
+  color: white;
+}
